@@ -19,7 +19,7 @@ var schema = new mongoose.Schema({
 		default: null
 	}
 }, {
- collection: 'Availability',
+ collection: 'Meal',
  autoIndex: false
 });
 
@@ -29,6 +29,6 @@ schema.pre('save', function(next) {
 });
 
 module.exports = function(conn) {
- conn.model('availability', schema);
- return conn.model('availability');
+ conn.model('meal', schema);
+ return conn.model('meal');
 }

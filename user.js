@@ -7,7 +7,8 @@ var schema = new mongoose.Schema({
     first_name : String,
     last_name : String,
     type : { type: String, enum: ['host', 'diner'] },
-    facebook_id : Number,
+    auth_provider : String,
+    auth_provider_id : Number,
 	created: {
 		type: Date,
 		default: Date.now
