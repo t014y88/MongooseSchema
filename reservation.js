@@ -3,9 +3,8 @@ var ObjectId = mongoose.Schema.Types.ObjectId;
 var Mixed = mongoose.Schema.Types.Mixed;
 
 var schema = new mongoose.Schema({
-    host_user : { type: ObjectId, ref: 'user' },
-    diner_user : { type: ObjectId, ref: 'user' },
-    slot: { type: ObjectId, ref: 'availability'}
+    diner : { type: ObjectId, ref: 'user' },
+    meal: { type: ObjectId, ref: 'meal'}
     people_count : Number,
 	created: {
 		type: Date,
