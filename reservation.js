@@ -3,11 +3,10 @@ var ObjectId = mongoose.Schema.Types.ObjectId;
 var Mixed = mongoose.Schema.Types.Mixed;
 
 var schema = new mongoose.Schema({
-    email : String,
-    first_name : String,
-    last_name : String,
-    type : { type: String, enum: ['host', 'diner'] },
-    facebook_id : Number,
+    host_user : { type: ObjectId, ref: 'user' },
+    diner_user : { type: ObjectId, ref: 'user' },
+    slot: { type: ObjectId, ref: 'availability'}
+    people_count : Number,
 	created: {
 		type: Date,
 		default: Date.now
@@ -17,7 +16,7 @@ var schema = new mongoose.Schema({
 		default: null
 	}
 }, {
- collection: 'User',
+ collection: 'Reservation',
  autoIndex: false
 });
 
@@ -27,6 +26,6 @@ schema.pre('save', function(next) {
 });
 
 module.exports = function(conn) {
- conn.model('user', schema);
- return conn.model('user');
+ conn.model('reservation', schema);
+ return conn.model('reservation');
 }

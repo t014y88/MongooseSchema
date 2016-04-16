@@ -13,15 +13,23 @@ var schema = new mongoose.Schema({
             item : String,
             ingredients : String
         }
-    ]
+    ],
+	created: {
+		type: Date,
+		default: Date.now
+	},
+		updated: {
+		type: Date,
+		default: null
+	}
 }, {
  collection: 'Menu',
  autoIndex: false
 });
 
-
 schema.pre('save', function(next) {
- next();
+  this.updated = new Date();
+  next();
 });
 
 module.exports = function(conn) {
