@@ -12,5 +12,5 @@ Response: 01-CreateUserResponse.json
 
 
 ###### 2. Get user detail by {userId}
-GET /user/{userId}
+GET /user/{userId}  
 Response: 02-GetUserDetailResponse.json  
