@@ -6,6 +6,7 @@ var schema = new mongoose.Schema({
     email : String,
     first_name : String,
     last_name : String,
+    picture : String,
     type : { type: String, enum: ['host', 'diner'] },
     auth_provider : { type: String, enum: ['facebook', 'twitter'] },
     auth_provider_id : Number,
