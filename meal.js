@@ -7,9 +7,7 @@ var schema = new mongoose.Schema({
 	date: Date,
 	available_spots: Number,
 	location: { type: ObjectId, ref: 'location' }
-	reservations: [
-		reservation: { type: ObjectId, ref: 'reservation' }
-	],
+	reservations: [{ type: ObjectId, ref: 'reservation' }],
 	created: {
 		type: Date,
 		default: Date.now
